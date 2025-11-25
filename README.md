@@ -3,6 +3,12 @@
 A small HTML/CSS/JavaScript experiment showcasing swipeable horizontal containers with scroll-snap behavior.  
 This project serves as a lightweight example of basic UI interactions without any frameworks.
 
+## Demo
+
+Here’s a quick demo of the swipe interaction:
+
+![Swipe Demo](assets/demo.gif)
+
 ## ✨ Features
 
 - Horizontal swipeable containers using native scrolling
@@ -17,12 +23,15 @@ This project serves as a lightweight example of basic UI interactions without an
 .
 ├── index.html
 ├── styles.css
-└── script.js
+├── script.js
+└── assets/
+    └── Demo.gif
 ```
 
 - **index.html** — contains three demo swipe components.
 - **styles.css** — handles layout, scroll snapping, theming, and the fade-in for “hold” items.
 - **script.js** — sets the initial scroll position and logs horizontal scroll delta for one of the swipe elements.
+- **assets/Demo.gif** - demonstration gif for the readme
 
 ## 🚀 Usage
 
