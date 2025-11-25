@@ -7,7 +7,7 @@ This project serves as a lightweight example of basic UI interactions without an
 
 Here’s a quick demo of the swipe interaction:
 
-![Swipe Demo](assets/demo.gif)
+![Swipe Demo](assets/Demo.gif)
 
 ## ✨ Features
 
