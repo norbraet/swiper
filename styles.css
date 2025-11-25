@@ -1,13 +1,27 @@
+/* -------------------------------
+   Variables
+---------------------------------*/
 :root {
   color-scheme: light dark;
 
-  --black: #070709;
+  --black: #2d1e2f;
   --white: #ffffff;
+  --container: #d3d5d4;
 
-  --fg: light-dark(var(--black), var(--white));
-  --bg: light-dark(var(--white), var(--black));
+  --fg: var(--black);
+  --bg: var(--white);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: var(--white);
+    --bg: var(--black);
+  }
+}
+
+/* -------------------------------
+   Global
+---------------------------------*/
 * {
   box-sizing: border-box;
 }
@@ -20,54 +34,120 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   line-height: 1.6;
-  font-size: 2rem;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* -------------------------------
+   Half-width wrapper
+---------------------------------*/
 .half {
   width: 50%;
 }
 
+/* -------------------------------
+   Swiper container
+---------------------------------*/
 .swipe {
   display: grid;
   grid-template-columns: auto 1fr auto;
   overflow-x: auto;
-  border-block: 1px #666 solid;
   scroll-snap-type: x mandatory;
   container-type: inline-size;
   scrollbar-width: none;
+  border-radius: 1rem;
+}
 
-  > .left {
-    background: red;
-    width: 200px;
-  }
+.swipe > .left,
+.swipe > .right {
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 200px;
+  padding: 2rem;
+}
 
-  > .right {
-    background: green;
-    width: 200px;
-  }
+.swipe > .left {
+  background: #f45b69;
+}
 
-  > :nth-child(2) {
-    width: 100cqw;
-    padding: 1rem 2rem;
-    scroll-snap-align: center;
-  }
+.swipe > .right {
+  background: #a2c5ac;
+}
 
-  &.hold {
-    opacity: 0;
-    transition: opacity 0.2s ease;
+.swipe > :nth-child(2) {
+  width: 100cqw;
+  scroll-snap-align: center;
+  background-color: #878e99;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
 
-    > * {
-      &:first-child {
-        scroll-snap-align: start;
-      }
+.swipe > :nth-child(2) h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #222;
+}
 
-      &:last-child {
-        scroll-snap-align: end;
-      }
-    }
+.swipe > :nth-child(2) p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #444;
+}
 
-    &.ready {
-      opacity: 1;
-    }
-  }
+.swipe > :nth-child(2) ul,
+.swipe > :nth-child(2) ol {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+  color: #444;
+}
+
+.swipe > :nth-child(2) li {
+  margin-bottom: 0.4rem;
+}
+
+.swipe > :nth-child(2) img {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+/* -------------------------------
+   Hold elements (initially hidden)
+---------------------------------*/
+.swipe.hold {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.swipe.hold > :first-child {
+  scroll-snap-align: start;
+}
+
+.swipe.hold > :last-child {
+  scroll-snap-align: end;
+}
+
+.swipe.hold.ready {
+  opacity: 1;
+}
+
+/* -------------------------------
+   Half-width swiper content adjustment
+---------------------------------*/
+.half .swipe > div {
+  padding: 1rem;
 }
