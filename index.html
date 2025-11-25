@@ -8,30 +8,70 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="swipe" id="swipe">
-      <button class="left">Delete</button>
-      <div>
-        <p>Hi, I live in a swiper</p>
-      </div>
-      <button class="right">Check</button>
-    </div>
-
-    <div class="swipe hold">
-      <button class="left">Delete</button>
-      <div>
-        <p>Hi, I live in a swiper</p>
-      </div>
-      <button class="right">Check</button>
-    </div>
-
-    <div class="half">
-      <div class="swipe hold">
+    <main>
+      <h1>Swiper</h1>
+      <p>
+        A small HTML/CSS/JavaScript experiment showcasing swipeable horizontal
+        containers with scroll-snap behavior. This project serves as a
+        lightweight example of basic UI interactions without any frameworks.
+      </p>
+      <div class="swipe" id="swipe">
         <button class="left">Delete</button>
         <div>
-          <p>Hi, I live in a swiper</p>
+          <h2>Card 1</h2>
+          <p>
+            This is a simple demonstration of a swipeable container that doesn't
+            hold
+          </p>
         </div>
         <button class="right">Check</button>
       </div>
-    </div>
+
+      <div class="swipe hold">
+        <button class="left">Delete</button>
+        <div>
+          <h2>Card 2</h2>
+          <ul>
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+          </ul>
+        </div>
+        <button class="right">Check</button>
+      </div>
+
+      <div class="swipe hold">
+        <button class="left">Delete</button>
+        <div>
+          <h2>Card 3</h2>
+          <p>Swipe to see more content!</p>
+        </div>
+        <div>
+          <img
+            class="right"
+            src="https://placehold.co/200x200"
+            alt="Demo image"
+          />
+          <p>Here could be some additional Information</p>
+        </div>
+      </div>
+
+      <div class="half">
+        <div class="swipe hold">
+          <button class="left">Delete</button>
+          <div>
+            <h2>Card 4</h2>
+            <p>
+              This swiper is half the width to demonstrate different layouts.
+            </p>
+            <ol>
+              <li>First step</li>
+              <li>Second step</li>
+            </ol>
+          </div>
+          <button class="right">Check</button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
